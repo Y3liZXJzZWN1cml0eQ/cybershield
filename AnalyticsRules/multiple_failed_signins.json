@@ -12,7 +12,7 @@
         "description": "Detects when a user has more than 5 failed sign-in attempts within 10 minutes.",
         "severity": "Medium",
         "enabled": true,
-        "query": "SigninLogs | where ResultType != 0 | summarize FailedAttempts = count() by UserPrincipalName, bin(TimeGenerated, 10m) | where FailedAttempts > 5",
+        "query": "SigninLogs | where ResultType != 0 | summarize FailedAttempts = count() by UserPrincipalName, bin(TimeGenerated, 10m) | where FailedAttempts > 6",
         "queryFrequency": "PT10M",
         "queryPeriod": "PT10M",
         "triggerOperator": "GreaterThan",
